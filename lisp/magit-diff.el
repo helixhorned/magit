@@ -2020,7 +2020,7 @@ Staging and applying changes is documented in info node
 (defun magit--insert-diff (&rest args)
   (declare (indent 0))
   (pcase-let ((`(,cmd . ,args)
-               (-flatten args))
+               (flatten-tree args))
               (magit-git-global-arguments
                 (remove "--literal-pathspecs" magit-git-global-arguments)))
     ;; As of Git 2.19.0, we need to generate diffs with
